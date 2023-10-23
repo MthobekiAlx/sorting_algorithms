@@ -1,7 +1,7 @@
 #include "sort.h"
 
 void s_int(int *a, int *b);
-void max_heapify(int *array, size_t size, size_t base, size_t root);
+void m_heap(int *array, size_t size, size_t base, size_t root);
 void heap_sort(int *array, size_t size);
 
 /**
@@ -19,13 +19,13 @@ void s_int(int *a, int *b)
 }
 
 /**
- * max_heapify - Turn a binary tree into a complete binary heap.
+ * m_heap - Turn a binary tree into a complete binary heap.
  * @array: An array of integers representing a binary tree.
  * @size: The size of the array/tree.
  * @base: The index of the base row of the tree.
  * @root: The root node of the binary tree.
  */
-void max_heapify(int *array, size_t size, size_t base, size_t root)
+void m_heap(int *array, size_t size, size_t base, size_t root)
 {
 	size_t left, right, large;
 
@@ -42,7 +42,7 @@ void max_heapify(int *array, size_t size, size_t base, size_t root)
 	{
 		s_int(array + root, array + large);
 		print_array(array, size);
-		max_heapify(array, size, base, large);
+		m_heap(array, size, base, large);
 	}
 }
 
@@ -63,12 +63,12 @@ void heap_sort(int *array, size_t size)
 		return;
 
 	for (i = (size / 2) - 1; i >= 0; i--)
-		max_heapify(array, size, size, i);
+		m_heap(array, size, size, i);
 
 	for (i = size - 1; i > 0; i--)
 	{
 		s_int(array, array + i);
 		print_array(array, size);
-		max_heapify(array, size, i, 0);
+		m_heap(array, size, i, 0);
 	}
 }
