@@ -1,8 +1,8 @@
 #include "sort.h"
 
 void s_int(int *a, int *b);
-int hoare_partition(int *array, size_t size, int left, int right);
-void hoare_sort(int *array, size_t size, int left, int right);
+int h_partition(int *array, size_t size, int left, int right);
+void h_sort(int *array, size_t size, int left, int right);
 void quick_sort_hoare(int *array, size_t size);
 
 /**
@@ -20,7 +20,7 @@ void s_int(int *a, int *b)
 }
 
 /**
- * hoare_partition - Order a subset of an array of integers
+ * h_partition - Order a subset of an array of integers
  *                   according to the hoare partition scheme.
  * @array: The array of integers.
  * @size: The size of the array.
@@ -32,7 +32,7 @@ void s_int(int *a, int *b)
  * Description: Uses the last element of the partition as the pivot.
  * Prints the array after each swap of two elements.
  */
-int hoare_partition(int *array, size_t size, int left, int right)
+int h_partition(int *array, size_t size, int left, int right)
 {
 	int pivot, above, below;
 
@@ -57,7 +57,7 @@ int hoare_partition(int *array, size_t size, int left, int right)
 }
 
 /**
- * hoare_sort - Implement the quicksort algorithm through recursion.
+ * h_sort - Implement the quicksort algorithm through recursion.
  * @array: An array of integers to sort.
  * @size: The size of the array.
  * @left: The starting index of the array partition to order.
@@ -65,15 +65,15 @@ int hoare_partition(int *array, size_t size, int left, int right)
  *
  * Description: Uses the Hoare partition scheme.
  */
-void hoare_sort(int *array, size_t size, int left, int right)
+void h_sort(int *array, size_t size, int left, int right)
 {
 	int part;
 
 	if (right - left > 0)
 	{
-		part = hoare_partition(array, size, left, right);
-		hoare_sort(array, size, left, part - 1);
-		hoare_sort(array, size, part, right);
+		part = h_partition(array, size, left, right);
+		h_sort(array, size, left, part - 1);
+		h_sort(array, size, part, right);
 	}
 }
 
@@ -91,5 +91,5 @@ void quick_sort_hoare(int *array, size_t size)
 	if (array == NULL || size < 2)
 		return;
 
-	hoare_sort(array, size, 0, size - 1);
+	h_sort(array, size, 0, size - 1);
 }
