@@ -5,18 +5,18 @@
 
 #include "sort.h"
 
-void swap_ints(int *a, int *b);
+void s_int(int *a, int *b);
 void bitonic_merge(int *array, size_t size, size_t start, size_t seq,
 		char flow);
 void bitonic_seq(int *array, size_t size, size_t start, size_t seq, char flow);
 void bitonic_sort(int *array, size_t size);
 
 /**
- * swap_ints - Swap two integers in an array.
+ * s_int - Swap two integers in an array.
  * @a: The first integer to swap.
  * @b: The second integer to swap.
  */
-void swap_ints(int *a, int *b)
+void s_int(int *a, int *b)
 {
 	int tmp;
 
@@ -44,7 +44,7 @@ void bitonic_merge(int *array, size_t size, size_t start, size_t seq,
 		{
 			if ((flow == UP && array[i] > array[i + jump]) ||
 			    (flow == DOWN && array[i] < array[i + jump]))
-				swap_ints(array + i, array + i + jump);
+				s_int(array + i, array + i + jump);
 		}
 		bitonic_merge(array, size, start, jump, flow);
 		bitonic_merge(array, size, start + jump, jump, flow);
