@@ -16,7 +16,7 @@
 ## Helper Files :raised_hands:
 
 * [print_array.c](./print_array.c): C function that prints an array of integers. 
-* [print_list.c](./print_list.c): C function that prints a `listint_t` doubly-linked list. 
+* [print_list.c](./print_list.c): C function that prints a `intlist_t` doubly-linked list. 
 
 ## Header Files :file_folder:
 
@@ -29,7 +29,7 @@ typedef struct listint_s
 	const int n;
 	struct listint_s *prev;
 	struct listint_s *next;
-} listint_t;
+} intlist_t;
 ```
 
 Function Prototypes:
@@ -37,13 +37,13 @@ Function Prototypes:
 | File                       | Prototype                                         |
 | -------------------------- | ------------------------------------------------- |
 | `print_array.c`            | `void print_array(const int *array, size_t size)` |
-| `print_list.c`             | `void print_list(const listint_t *list)`          |
+| `print_list.c`             | `void print_list(const intlist_t *list)`          |
 | `0-bubble_sort.c`          | `void bubble_sort(int *array, size_t size);`      |
-| `1-insertion_sort_list.c`  | `void insertion_sort_list(listint_t **list);`     |
+| `1-insertion_sort_list.c`  | `void insertion_sort_list(intlist_t **list);`     |
 | `2-selection-sort.c`       | `void selection_sort(int *array, size_t size);`   |
 | `3-quick_sort.c`           | `void quick_sort(int *array, size_t size);`       |
 | `100-shell_sort.c`         | `void shell_sort(int *array, size_t size);`       |
-| `101-cocktail_sort_list.c` | `void cocktail_sort_list(listint_t **list);`      |
+| `101-cocktail_sort_list.c` | `void cocktail_sort_list(intlist_t **list);`      |
 | `102-counting_sort.c`      | `void counting_sort(int *array, size_t size);`    |
 | `103-merge_sort.c`         | `void merge_sort(int *array, size_t size);`       |
 | `104-heap_sort.c`          | `void heap_sort(int *array, size_t size);`        |
@@ -89,7 +89,7 @@ Function Prototype:
   * [0-O](./0-O): Text file containing the best, average, and worst case time complexities of the Bubble Sort algorithm, one per line.
 
 * **1. Insertion sort**
-  * [1-insertion_sort_list.c](./1-insertion_sort_list.c): C function that sorts a `listint_t` doubly-linked list of integers in ascending order using the
+  * [1-insertion_sort_list.c](./1-insertion_sort_list.c): C function that sorts a `intlist_t` doubly-linked list of integers in ascending order using the
   Insertion Sort algorithm.
   * Prints the list after each swap.
   * [1-O](./1-O): Text file containing the best, average, and worst case time complexities of the Insertion Sort algorithm, one per line.
@@ -113,7 +113,7 @@ Function Prototype:
 
 * **5. Cocktail shaker sort**
   * [101-cocktail_sort_list.c](./101-cocktail_sort_list.c): C function that sorts
-  a `listint_t` doubly-linked list of integers in ascending order using the Cocktail Shaker Sort algorithm.
+  a `intlist_t` doubly-linked list of integers in ascending order using the Cocktail Shaker Sort algorithm.
   * Prints the list after each swap.
   * [101-O](./101-O): Text file containing the best, average, and worst case time complexities of the Cocktail Shaker Sort algorithm, one per line.
 
