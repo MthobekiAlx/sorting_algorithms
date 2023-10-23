@@ -38,7 +38,7 @@ void p_array(const int *array, size_t size);
 void p_list(const intlist_t *list);
 
 /* Sorting algoritms */
-void _bubble_sort(int *array, size_t size); //bubble_Sort
+void bubble_sort(int *array, size_t size); //bubble_Sort
 void insertion_sortlist(intlist_t **list); //insterion_shorlist
 void select_sort(int *array, size_t size); //selection_list
 void q_sort(int *array, size_t size); //quick sort
