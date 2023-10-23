@@ -24,11 +24,11 @@
 
 Data Structure:
 ```
-typedef struct listint_s
+typedef struct intlist_s
 {
 	const int n;
-	struct listint_s *prev;
-	struct listint_s *next;
+	struct intlist_s *prev;
+	struct intlist_s *next;
 } intlist_t;
 ```
 
