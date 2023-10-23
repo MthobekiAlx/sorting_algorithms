@@ -1,19 +1,19 @@
 #include "sort.h"
 
-void merge_subarr(int *subarr, int *buff, size_t front, size_t mid,
+void m_subarr(int *subarr, int *buff, size_t front, size_t mid,
 		size_t back);
-void merge_sort_recursive(int *subarr, int *buff, size_t front, size_t back);
+void sort_recursive_merge(int *subarr, int *buff, size_t front, size_t back);
 void merge_sort(int *array, size_t size);
 
 /**
- * merge_subarr - Sort a subarray of integers.
+ * m_subarr - Sort a subarray of integers.
  * @subarr: A subarray of an array of integers to sort.
  * @buff: A buffer to store the sorted subarray.
  * @front: The front index of the array.
  * @mid: The middle index of the array.
  * @back: The back index of the array.
  */
-void merge_subarr(int *subarr, int *buff, size_t front, size_t mid,
+void m_subarr(int *subarr, int *buff, size_t front, size_t mid,
 		size_t back)
 {
 	size_t i, j, k = 0;
@@ -38,22 +38,22 @@ void merge_subarr(int *subarr, int *buff, size_t front, size_t mid,
 }
 
 /**
- * merge_sort_recursive - Implement the merge sort algorithm through recursion.
+ * sort_recursive_merge - Implement the merge sort algorithm through recursion.
  * @subarr: A subarray of an array of integers to sort.
  * @buff: A buffer to store the sorted result.
  * @front: The front index of the subarray.
  * @back: The back index of the subarray.
  */
-void merge_sort_recursive(int *subarr, int *buff, size_t front, size_t back)
+void sort_recursive_merge(int *subarr, int *buff, size_t front, size_t back)
 {
 	size_t mid;
 
 	if (back - front > 1)
 	{
 		mid = front + (back - front) / 2;
-		merge_sort_recursive(subarr, buff, front, mid);
-		merge_sort_recursive(subarr, buff, mid, back);
-		merge_subarr(subarr, buff, front, mid, back);
+		sort_recursive_merge(subarr, buff, front, mid);
+		sort_recursive_merge(subarr, buff, mid, back);
+		m_subarr(subarr, buff, front, mid, back);
 	}
 }
 
@@ -76,7 +76,7 @@ void merge_sort(int *array, size_t size)
 	if (buff == NULL)
 		return;
 
-	merge_sort_recursive(array, buff, 0, size);
+	sort_recursive_merge(array, buff, 0, size);
 
 	free(buff);
 }
